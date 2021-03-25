@@ -1,5 +1,5 @@
 import { MongoRepository } from '../../util/data/MongoRepository';
-import { Category } from './category';
+import { Category } from './category.model';
 
 export class CategoriesMongoRepository extends MongoRepository<Category> {
   constructor() {

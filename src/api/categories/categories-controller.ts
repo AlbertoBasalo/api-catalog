@@ -1,7 +1,7 @@
 import * as express from 'express';
 import { get, getById, post, put, remove } from '../../util/data/crud.controller';
-import { CategoriesMongoRepository } from './categoriesMongoRepository';
-import { Category } from './category';
+import { CategoriesMongoRepository } from './categories.repository';
+import { Category } from './category.model';
 
 const repository = new CategoriesMongoRepository();
 
