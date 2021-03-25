@@ -1,7 +1,7 @@
 import * as express from 'express';
 import { sendNotFound, sendSuccess } from '../../util/app/responseSenders';
 import { get, getById, post, put, remove } from '../../util/data/crud.controller';
-import { Resource } from './resource.model';
+import { Resource } from './resource';
 import { ResourcesMongoRepository } from './resources.repository';
 
 const repository = new ResourcesMongoRepository();

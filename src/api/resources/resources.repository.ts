@@ -1,5 +1,5 @@
 import { MongoRepository } from '../../util/data/MongoRepository';
-import { Resource } from './resource.model';
+import { Resource } from './resource';
 
 export class ResourcesMongoRepository extends MongoRepository<Resource> {
   constructor() {
