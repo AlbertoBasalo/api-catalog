@@ -29,7 +29,8 @@
     "lint:fix": "npm run lint -- --fix",
     "prerelease": "standard-version ",
     "release": "git push --follow-tags origin main",
-    "deploy": "git checkout heroku-api && git merge main",
+    "predeploy": "npm run release",
+    "deploy": "git checkout heroku-api && git merge main && git push origin heroku-api && git checkout main",
     "updates": "ncu -u"
   },
   "devDependencies": {
