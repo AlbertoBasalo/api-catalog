@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.3](https://github.com/angularbuilders/api-catalog/compare/v0.0.2...v0.0.3) (2021-03-25)
+
+
+### Features
+
+* resources mongo only ([51fa6a2](https://github.com/angularbuilders/api-catalog/commit/51fa6a24365304143e0ea39762fb88394e5061db))
+
 ### 0.0.2 (2021-03-25)
 
 ## [1.8.0](https://github.com/AtomicBuilders/proton/compare/v1.7.0...v1.8.0) (2021-02-28)
