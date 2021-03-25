@@ -58,41 +58,41 @@ paths:
           $ref: '#/components/responses/401'
         404:
           $ref: '#/components/responses/404'
-  /categories/{id}/items:
+  /categories/{id}/resources:
     get:
-      description: Get Items by CategoryId
-      operationId: getItemsByCategoryId
+      description: Get resources by CategoryId
+      operationId: getResourcesByCategoryId
       responses:
         200:
           $ref: '#/components/responses/200'
         404:
           $ref: '#/components/responses/404'
-  /categories/{id}/items/count:
+  /categories/{id}/resources/count:
     get:
-      description: Get Metadata of Items by CategoryId
-      operationId: getItemsMetadataByCategoryId
+      description: Get Metadata of resources by CategoryId
+      operationId: getResourcesMetadataByCategoryId
       responses:
         206:
           $ref: '#/components/responses/206'
         404:
           $ref: '#/components/responses/404'
-  /items:
+  /resources:
     get:
-      description: Get the Item list
-      operationId: getItems
+      description: Get the resource list
+      operationId: getResources
       parameters:
         - in: query
           name: byCategory
           required: false
           schema:
             type: string
-          description: The items of a given category
+          description: The resources of a given category
       responses:
         200:
           $ref: '#/components/responses/200'
     post:
-      description: Adds a Item to the list
-      operationId: postItem
+      description: Adds a resource to the list
+      operationId: postResource
       security:
         - bearerAuth: []
       responses:
@@ -100,18 +100,18 @@ paths:
           $ref: '#/components/responses/201'
         409:
           $ref: '#/components/responses/400'
-  /items/{id}:
+  /resources/{id}:
     get:
-      description: Get a Item by Id
-      operationId: getItemById
+      description: Get a resource by Id
+      operationId: getResourceById
       responses:
         200:
           $ref: '#/components/responses/200'
         404:
           $ref: '#/components/responses/404'
     put:
-      description: Updates a Item at the list
-      operationId: putItem
+      description: Updates a resource at the list
+      operationId: putResource
       security:
         - bearerAuth: []
       responses:
@@ -120,8 +120,8 @@ paths:
         404:
           $ref: '#/components/responses/404'
     delete:
-      description: Deletes a Item from the list
-      operationId: deleteItem
+      description: Deletes a resource from the list
+      operationId: deleteResource
       security:
         - bearerAuth: []
       responses:

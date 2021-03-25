@@ -1,9 +1,9 @@
 import { generateToken } from '../../util/app/auth';
 import { getB64FromObject, getObjectFromB64 } from '../../util/buffer';
 import { logger } from '../../util/logger';
-import { User } from './User';
-import { usersRepository } from './users.repository.factory';
-
+import { User } from './user';
+import { UsersMongoRepository } from './usersMongoRepository';
+const usersRepository = new UsersMongoRepository();
 export async function registerUser(userToRegister: User): Promise<User | null> {
   setUserIdFrom(userToRegister);
   setUserActivationTokenId(userToRegister);

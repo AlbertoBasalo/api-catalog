@@ -1,11 +1,11 @@
 import { MongoRepository } from '../../util/data/MongoRepository';
-import { Item } from './Item';
+import { Resource } from './resource';
 
-export class ItemsMongoRepository extends MongoRepository<Item> {
+export class ResourcesMongoRepository extends MongoRepository<Resource> {
   constructor() {
-    super('items');
+    super('resources');
   }
-  public async selectByCategoryId(id: string): Promise<Item[]> {
+  public async selectByCategoryId(id: string): Promise<Resource[]> {
     return this.selectByQuery({ categoryId: id });
   }
   public countByCategoryId(id: string): Promise<number> {

@@ -8,10 +8,10 @@ import {
   sendSuccess,
 } from '../../util/app/responseSenders';
 import { getById, put, remove } from '../../util/data/crud.controller';
-import { User } from './User';
+import { User } from './user';
 import { activateUser, registerUser } from './users.domain';
-import { usersRepository as repository } from './users.repository.factory';
-
+import { UsersMongoRepository } from './usersMongoRepository';
+const repository = new UsersMongoRepository();
 export function getUserById(
   req: express.Request,
   res: express.Response,

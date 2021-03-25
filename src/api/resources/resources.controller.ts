@@ -1,17 +1,19 @@
 import * as express from 'express';
 import { sendNotFound, sendSuccess } from '../../util/app/responseSenders';
 import { get, getById, post, put, remove } from '../../util/data/crud.controller';
-import { Item } from './Item';
-import { itemsRepository as repository } from './items.repository.factory';
+import { Resource } from './resource';
+import { ResourcesMongoRepository } from './resourcesMongoRepository';
 
-export async function getItems(
+const repository = new ResourcesMongoRepository();
+
+export async function getResources(
   req: express.Request,
   res: express.Response,
   next: express.NextFunction
 ): Promise<void> {
   const categoryId = req.query.byCategory as string;
   if (categoryId) {
-    const result = (await repository.selectByCategoryId(categoryId)) as Item[];
+    const result = (await repository.selectByCategoryId(categoryId)) as Resource[];
     if (result) {
       sendSuccess(res, result);
     } else {
@@ -22,7 +24,7 @@ export async function getItems(
   }
 }
 
-export function getItemById(
+export function getResourceById(
   req: express.Request,
   res: express.Response,
   next: express.NextFunction
@@ -30,13 +32,13 @@ export function getItemById(
   getById(req, res, next, repository);
 }
 
-export async function getItemsByCategoryId(
+export async function getResourcesByCategoryId(
   req: express.Request,
   res: express.Response,
   next: express.NextFunction
 ): Promise<void> {
   const categoryId = req.params.id;
-  console.log('getItemsByCategoryId: ' + categoryId);
+  console.log('getResourcesByCategoryId: ' + categoryId);
   const result = await repository.selectByCategoryId(categoryId);
   if (result) {
     sendSuccess(res, result);
@@ -45,7 +47,7 @@ export async function getItemsByCategoryId(
   }
 }
 
-export async function getItemsMetadataByCategoryId(
+export async function getResourcesMetadataByCategoryId(
   req: express.Request,
   res: express.Response,
   next: express.NextFunction
@@ -59,14 +61,14 @@ export async function getItemsMetadataByCategoryId(
   }
 }
 
-export function postItem(
+export function postResource(
   req: express.Request,
   res: express.Response,
   next: express.NextFunction
 ): void {
   post(req, res, next, repository);
 }
-export function putItem(
+export function putResource(
   req: express.Request,
   res: express.Response,
   next: express.NextFunction
@@ -74,7 +76,7 @@ export function putItem(
   put(req, res, next, repository);
 }
 
-export function deleteItem(
+export function deleteResource(
   req: express.Request,
   res: express.Response,
   next: express.NextFunction
