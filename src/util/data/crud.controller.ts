@@ -47,7 +47,8 @@ export async function post<T>(
   req: express.Request,
   res: express.Response,
   next: express.NextFunction,
-  repository: Repository<T>
+  repository: Repository<T>,
+  onInserted?: (T) => {}
 ): Promise<void> {
   try {
     const toAdd = req.body;
@@ -55,6 +56,9 @@ export async function post<T>(
     setOwner(req, toAdd);
     const added = await repository.insert(toAdd);
     if (added) {
+      if (onInserted) {
+        onInserted(added);
+      }
       sendCreated(res, added);
     } else {
       sendConflict(res);

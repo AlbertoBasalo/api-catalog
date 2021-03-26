@@ -76,6 +76,15 @@ paths:
           $ref: '#/components/responses/206'
         404:
           $ref: '#/components/responses/404'
+  /leads:
+    post:
+      description: Adds a Lead to the system
+      operationId: postLead
+      responses:
+        201:
+          $ref: '#/components/responses/201'
+        409:
+          $ref: '#/components/responses/400'
   /resources:
     get:
       description: Get the resource list

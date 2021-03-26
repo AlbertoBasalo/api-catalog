@@ -20,9 +20,9 @@ function initializeConfig() {
     console.info('Using .env file to supply config environment variables');
     dotenv.config({ path: `${ASSETS}.env` });
   } else {
-    console.warn(
-      '.env file not found see .env.example file to supply data for your environment variables. Using default values instead. '
-    );
+    // console.warn(
+    //   '.env file not found see .env.example file to supply data for your environment variables. Using default values instead. '
+    // );
   }
 }
 
