@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.8](https://github.com/angularbuilders/api-catalog/compare/v0.0.7...v0.0.8) (2021-03-26)
+
+
+### Bug Fixes
+
+* log email sendings ([cc5615f](https://github.com/angularbuilders/api-catalog/commit/cc5615f11d3d8d91cc8a48c3674fa5f3471f0564))
+
 ### [0.0.7](https://github.com/angularbuilders/api-catalog/compare/v0.0.6...v0.0.7) (2021-03-26)
 
 
