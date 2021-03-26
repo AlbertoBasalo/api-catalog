@@ -3,7 +3,7 @@ import { emailConfig } from './config';
 
 const defaultTransporter = {
   host: 'smtp.gmail.com',
-  port: 587,
+  port: 465,
   secure: true,
   service: 'gmail',
   auth: {
