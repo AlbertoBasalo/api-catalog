@@ -1,7 +1,7 @@
 import * as nodemailer from 'nodemailer';
 import { emailConfig } from './config';
 
-const configTransporter = nodemailer.createTransport({
+const defaultTransporter = {
   host: 'smtp.gmail.com',
   port: 587,
   secure: true,
@@ -10,7 +10,8 @@ const configTransporter = nodemailer.createTransport({
     user: emailConfig.user,
     pass: emailConfig.password,
   },
-});
+};
+const configTransporter = nodemailer.createTransport(defaultTransporter);
 
 export async function sendMail(
   recipient: string,
@@ -18,7 +19,7 @@ export async function sendMail(
   htmlContent: string,
   transporter = configTransporter
 ) {
-  console.log(JSON.stringify(configTransporter));
+  console.log(JSON.stringify(defaultTransporter));
   const sender = `"${emailConfig.senderName}" ${emailConfig.senderEmail}`;
   const message = {
     from: sender,
@@ -28,6 +29,7 @@ export async function sendMail(
   };
   try {
     const result = await transporter.sendMail(message);
+    console.log(JSON.stringify(message));
     console.log(JSON.stringify(result));
     return result;
   } catch (err) {
