@@ -18,6 +18,7 @@ export async function sendMail(
   htmlContent: string,
   transporter = configTransporter
 ) {
+  console.log(JSON.stringify(configTransporter));
   const sender = `"${emailConfig.senderName}" ${emailConfig.senderEmail}`;
   const message = {
     from: sender,
@@ -30,7 +31,8 @@ export async function sendMail(
     console.log(JSON.stringify(result));
     return result;
   } catch (err) {
-    console.error(JSON.stringify(emailConfig));
+    console.error(JSON.stringify(err));
+    console.warn(JSON.stringify(emailConfig));
     return null;
   }
 }
