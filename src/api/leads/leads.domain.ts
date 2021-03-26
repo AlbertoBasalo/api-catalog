@@ -9,6 +9,8 @@ export async function notifyContact(lead: Lead) {
   await sendMail(
     lead.email,
     'Thanks for your interest',
-    `<p>Hi there, we will contact you ASAP!</p> <p><i>The Angular Builders</i></p>`
+    `<p>Hi there ${
+      lead.name || 'friend'
+    }, we have received your request we will contact you ASAP!</p> <p><a href="https://www.angular.builders"><i>The Angular Builders</i></a></p>`
   );
 }
