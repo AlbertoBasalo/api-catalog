@@ -1,8 +1,5 @@
 import * as nodemailer from 'nodemailer';
-import SMTPTransport from 'nodemailer/lib/smtp-transport';
 import { emailConfig } from './config';
-
-const options: SMTPTransport.Options;
 
 const configTransporter = nodemailer.createTransport({
   host: 'smtp.gmail.com',
