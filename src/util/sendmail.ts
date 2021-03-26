@@ -1,22 +1,29 @@
 import * as nodemailer from 'nodemailer';
 import { emailConfig } from './config';
 
-const transporter = nodemailer.createTransport({
-  // host: 'smtp.googlemail.com',
-  // port: emailConfig.port,
-  // secure: emailConfig.secure,
-  service: emailConfig.service,
+const configTransporter = nodemailer.createTransport({
+  host: 'smtp.googlemail.com',
+  port: 465,
+  secure: true,
+  service: 'gmail',
   auth: {
     user: emailConfig.user,
     pass: emailConfig.password,
   },
 });
 
-export async function sendMail(recipient: string, subject: string, htmlContent: string) {
-  return await transporter.sendMail({
-    from: `"${emailConfig.senderName}" ${emailConfig.senderEmail}`,
+export async function sendMail(
+  recipient: string,
+  subject: string,
+  htmlContent: string,
+  transporter = configTransporter
+) {
+  const sender = `"${emailConfig.senderName}" ${emailConfig.senderEmail}`;
+  const message = {
+    from: sender,
     to: recipient,
     subject: subject,
     html: htmlContent,
-  });
+  };
+  return await transporter.sendMail(message);
 }
