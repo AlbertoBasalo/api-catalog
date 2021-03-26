@@ -19,7 +19,6 @@ export async function sendMail(
   htmlContent: string,
   transporter = configTransporter
 ) {
-  console.log(JSON.stringify(defaultTransporter));
   const sender = `"${emailConfig.senderName}" ${emailConfig.senderEmail}`;
   const message = {
     from: sender,
@@ -29,12 +28,10 @@ export async function sendMail(
   };
   try {
     const result = await transporter.sendMail(message);
-    console.log(JSON.stringify(message));
     console.log(JSON.stringify(result));
     return result;
   } catch (err) {
     console.error(JSON.stringify(err));
-    console.warn(JSON.stringify(emailConfig));
     return null;
   }
 }
