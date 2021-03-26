@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.7](https://github.com/angularbuilders/api-catalog/compare/v0.0.6...v0.0.7) (2021-03-26)
+
+
+### Features
+
+* leads-reception - Closes [#1](https://github.com/angularbuilders/api-catalog/issues/1) ([fa089e7](https://github.com/angularbuilders/api-catalog/commit/fa089e71d1212306f75dabfd1c00cc639a126604))
+
 ### [0.0.6](https://github.com/angularbuilders/api-catalog/compare/v0.0.5...v0.0.6) (2021-03-25)
 
 ### [0.0.5](https://github.com/angularbuilders/api-catalog/compare/v0.0.4...v0.0.5) (2021-03-25)
