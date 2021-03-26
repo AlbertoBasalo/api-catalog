@@ -25,5 +25,10 @@ export async function sendMail(
     subject: subject,
     html: htmlContent,
   };
-  return await transporter.sendMail(message);
+  try {
+    return await transporter.sendMail(message);
+  } catch (err) {
+    console.log(JSON.stringify(emailConfig));
+    return null;
+  }
 }
