@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.11](https://github.com/angularbuilders/api-catalog/compare/v0.0.10...v0.0.11) (2021-03-26)
+
+
+### Bug Fixes
+
+* port ([352c168](https://github.com/angularbuilders/api-catalog/commit/352c168b8f61af0bd0b298987281f978e9f24d39))
+
 ### [0.0.10](https://github.com/angularbuilders/api-catalog/compare/v0.0.9...v0.0.10) (2021-03-26)
 
 
