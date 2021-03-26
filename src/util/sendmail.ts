@@ -26,9 +26,11 @@ export async function sendMail(
     html: htmlContent,
   };
   try {
-    return await transporter.sendMail(message);
+    const result = await transporter.sendMail(message);
+    console.log(JSON.stringify(result));
+    return result;
   } catch (err) {
-    console.log(JSON.stringify(emailConfig));
+    console.error(JSON.stringify(emailConfig));
     return null;
   }
 }
