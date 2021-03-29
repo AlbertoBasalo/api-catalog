@@ -3,7 +3,7 @@
     /* Visit https://aka.ms/tsconfig.json to read more about this file */
 
     /* Basic Options */
-    "target": "ES5" /* Specify ECMAScript target version: 'ES3' (default), 'ES5', ... or 'ESNEXT'. */,
+    "target": "ESNEXT" /* Specify ECMAScript target version: 'ES3' (default), 'ES5', ... or 'ESNEXT'. */,
     "module": "commonjs" /* Specify module code generation: 'none', 'commonjs', 'amd', 'system', 'umd', 'es2015', 'es2020', or 'ESNext'. */,
     "lib": ["es2019"] /* Specify library files to be included in the compilation. */,
     "outDir": "./dist" /* Redirect output structure to the directory. */,
