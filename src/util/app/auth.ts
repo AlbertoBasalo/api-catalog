@@ -55,12 +55,12 @@ export function setOwner(req, target: object) {
 }
 
 // ToDo: move from auth to a base util lib...
-
+// ToDo: use a slugify util
 export function setId(req, target: object) {
   const id = target['id'];
   if (!!id) return;
   if (!!target['name']) {
-    target['id'] = (target['name'] as string).toLocaleLowerCase().replaceAll(' ', '');
+    target['id'] = (target['name'] as string).toLocaleLowerCase().split(' ').join('-');
   } else {
     target['id'] = new Date().getTime().toLocaleString();
   }
