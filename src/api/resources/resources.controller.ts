@@ -2,6 +2,7 @@ import * as express from 'express';
 import { sendNotFound, sendSuccess } from '../../util/app/responseSenders';
 import { get, getById, post, put, remove } from '../../util/data/crud.controller';
 import { Resource } from './resource';
+import { validateResource } from './resources.domain';
 import { ResourcesMongoRepository } from './resources.repository';
 
 const repository = new ResourcesMongoRepository();
@@ -38,7 +39,6 @@ export async function getResourcesByCategoryId(
   next: express.NextFunction
 ): Promise<void> {
   const categoryId = req.params.id;
-  console.log('getResourcesByCategoryId: ' + categoryId);
   const result = await repository.selectByCategoryId(categoryId);
   if (result) {
     sendSuccess(res, result);
@@ -66,8 +66,9 @@ export function postResource(
   res: express.Response,
   next: express.NextFunction
 ): void {
-  post(req, res, next, repository);
+  post(req, res, next, repository, validateResource);
 }
+
 export function putResource(
   req: express.Request,
   res: express.Response,

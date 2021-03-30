@@ -20,6 +20,10 @@ export function sendConflict(res: express.Response, message = 'Conflict with cur
   res.status(httpStatus.CONFLICT).json({ message });
 }
 
+export function sendUnprocessable(res: express.Response, message = 'Invalid data'): void {
+  res.status(httpStatus.UNPROCESSABLE_ENTITY).json({ message });
+}
+
 export function sendForbidden(res: express.Response, message = 'Not enough permissions'): void {
   res.status(httpStatus.FORBIDDEN).json({ message });
 }

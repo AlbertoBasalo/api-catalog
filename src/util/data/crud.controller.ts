@@ -8,6 +8,7 @@ import {
   sendForbidden,
   sendNotFound,
   sendSuccess,
+  sendUnprocessable,
 } from '../app/responseSenders';
 
 export async function get<T>(
@@ -48,16 +49,23 @@ export async function post<T>(
   res: express.Response,
   next: express.NextFunction,
   repository: Repository<T>,
-  onInserted?: (T) => {}
+  validate?: (T) => boolean,
+  afterInserted?: (T) => {}
 ): Promise<void> {
   try {
     const toAdd = req.body;
+    if (validate) {
+      if (validate(toAdd) === false) {
+        sendUnprocessable(res);
+        return;
+      }
+    }
     setId(req, toAdd);
     setOwner(req, toAdd);
     const added = await repository.insert(toAdd);
     if (added) {
-      if (onInserted) {
-        onInserted(added);
+      if (afterInserted) {
+        afterInserted(added);
       }
       sendCreated(res, added);
     } else {

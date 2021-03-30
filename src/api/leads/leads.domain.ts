@@ -1,5 +1,11 @@
 import { sendMail } from '../../util/sendmail';
 import { Lead } from './lead';
+
+export function validateLead(lead: Lead) {
+  if (!lead) return false;
+  if (lead.email.length <= 5) return false;
+}
+
 export async function notifyContact(lead: Lead) {
   await sendMail(
     'albertobasalo71@gmail.com',
