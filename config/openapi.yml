@@ -197,7 +197,7 @@ paths:
   /test:
     get:
       description: Used as smoke test. Should return OK
-      operationId: test
+      operationId: getTest
       responses:
         200:
           $ref: '#/components/responses/200'
