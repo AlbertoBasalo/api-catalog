@@ -2,6 +2,20 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.18](https://github.com/angularbuilders/api-catalog/compare/v0.0.17...v0.0.18) (2021-04-08)
+
+
+### Features
+
+* smoke test ([c27ecbf](https://github.com/angularbuilders/api-catalog/commit/c27ecbfde9c17b8c9d96c6b778825cbaba61daaf))
+* validation hooks ([0d06f80](https://github.com/angularbuilders/api-catalog/commit/0d06f806864298d1ea08c29c0c6120411de90e64))
+
+
+### Bug Fixes
+
+* use replace all at id generator function ([92fc997](https://github.com/angularbuilders/api-catalog/commit/92fc99707c68f617fb6ae643c2787864b41e95c2))
+* use split join ([531f0bc](https://github.com/angularbuilders/api-catalog/commit/531f0bc4d6c94e42dcdbd25d17a5082c156f82ae))
+
 ### [0.0.17](https://github.com/angularbuilders/api-catalog/compare/v0.0.16...v0.0.17) (2021-03-26)
 
 
