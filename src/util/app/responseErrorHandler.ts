@@ -33,8 +33,9 @@ function handleError(
     message: err.message,
   };
   if (err.errors) responseError.errors = err.errors;
-  if (!rootConfig.isProduction) {
-    logger.warn(`${req.url} throws ${err.stack || 'No stack'}`);
-  }
+  // if (!rootConfig.isProduction) {
+  //   logger.warn(`${req.url} throws ${err.stack || 'No stack'}`);
+  // }
+  logger.warn(`${req.url} throws ${err.stack || 'No stack'}`);
   res.status(err.status || httpStatus.INTERNAL_SERVER_ERROR).json(responseError);
 }
