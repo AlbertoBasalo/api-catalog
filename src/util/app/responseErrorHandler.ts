@@ -27,6 +27,7 @@ function handleError(
   res: express.Response,
   rootConfig: RootConfig
 ) {
+  console.log('Handled error');
   logger.error(err);
   const responseError: ResponseError = {
     name: err.name,
