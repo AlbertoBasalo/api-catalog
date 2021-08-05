@@ -86,9 +86,9 @@ export async function put<T>(
     const id = req.params.id;
     const toUpdate = await repository.selectById(id);
     if (!toUpdate) return sendNotFound(res);
-    if (isForbidden(req, toUpdate)) {
-      return sendForbidden(res);
-    }
+    // if (isForbidden(req, toUpdate)) {
+    //   return sendForbidden(res);
+    // }
     const payload = req.body;
     payload.id = toUpdate['id'];
     payload.ownerId = toUpdate['ownerId'];

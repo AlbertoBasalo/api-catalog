@@ -1,19 +1,15 @@
 export interface Resource {
+  id: string;
   name: string;
   description?: string;
   url?: string;
-  event?: {
-    date: Date;
-    location: string;
+  gitHub?: {
+    url: string;
   };
-  course?: {
-    date: Date;
-    location: string;
-    teacher: string;
-    academy: string;
+  npm?: {
+    score: number;
+    tags: string[];
   };
-  price?: number;
-  id: string;
   categoryId: string;
   ownerId?: string;
 }

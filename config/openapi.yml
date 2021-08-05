@@ -121,8 +121,6 @@ paths:
     put:
       description: Updates a resource at the list
       operationId: putResource
-      security:
-        - bearerAuth: []
       responses:
         200:
           $ref: '#/components/responses/200'
