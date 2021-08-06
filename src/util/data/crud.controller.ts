@@ -88,8 +88,8 @@ export async function put<T>(
     const toUpdate = await repository.selectById(id);
     if (!toUpdate) return sendNotFound(res);
     const origin = req.get('origin');
-    console.log(origin);
-    if (origin.startsWith(rootConfig.clientDomain) === false) {
+    if (origin !== rootConfig.clientDomain) {
+      console.log(`${origin} not equal to ${rootConfig.clientDomain}`);
       return sendForbidden(res);
     }
     // if (isForbidden(req, toUpdate)) {
