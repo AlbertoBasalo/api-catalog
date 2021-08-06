@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.22](https://github.com/angularbuilders/api-catalog/compare/v0.0.21...v0.0.22) (2021-08-06)
+
+
+### Features
+
+* referer check before put ([0cb7623](https://github.com/angularbuilders/api-catalog/commit/0cb7623e3abf6d6a26b7eb2716877a8484c90d71))
+
 ### [0.0.21](https://github.com/angularbuilders/api-catalog/compare/v0.0.20...v0.0.21) (2021-08-05)
 
 

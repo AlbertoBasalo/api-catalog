@@ -1,6 +1,6 @@
 {
   "name": "api-catalog",
-  "version": "0.0.21",
+  "version": "0.0.22",
   "description": "Express API for the resources catalog database",
   "author": {
     "name": "Alberto Basalo",
