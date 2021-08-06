@@ -37,7 +37,6 @@ export class MongoRepository<T> implements Repository<T> {
   public async update(id: string, toUpdate: Partial<T>): Promise<T> {
     const noid = { _id: undefined };
     const result = await this.getCollection().findOneAndReplace(this.getKeyQuery(id), toUpdate, {
-      // returnNewDocument: true,
       upsert: false,
     });
     if (result['value']) {

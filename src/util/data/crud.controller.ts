@@ -10,6 +10,7 @@ import {
   sendSuccess,
   sendUnprocessable,
 } from '../app/responseSenders';
+import { rootConfig } from '../config';
 
 export async function get<T>(
   req: express.Request,
@@ -86,6 +87,11 @@ export async function put<T>(
     const id = req.params.id;
     const toUpdate = await repository.selectById(id);
     if (!toUpdate) return sendNotFound(res);
+    const origin = req.get('origin');
+    console.log(origin);
+    if (origin.startsWith(rootConfig.clientDomain) === false) {
+      return sendForbidden(res);
+    }
     // if (isForbidden(req, toUpdate)) {
     //   return sendForbidden(res);
     // }
