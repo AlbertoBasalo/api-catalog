@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.24](https://github.com/angularbuilders/api-catalog/compare/v0.0.23...v0.0.24) (2021-08-06)
+
+
+### Bug Fixes
+
+* check equal domains ([f8038d6](https://github.com/angularbuilders/api-catalog/commit/f8038d66d43344103c8d8566fa7aba42c6d198bd))
+
 ### [0.0.23](https://github.com/angularbuilders/api-catalog/compare/v0.0.22...v0.0.23) (2021-08-06)
 
 ### [0.0.22](https://github.com/angularbuilders/api-catalog/compare/v0.0.21...v0.0.22) (2021-08-06)
